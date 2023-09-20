@@ -2,6 +2,7 @@
 using log4net.Config;
 using Synchronizer;
 using System.Timers;
+using static System.Net.Mime.MediaTypeNames;
 
 uint synchronizationInterval;
 
@@ -19,7 +20,8 @@ ILog log = LogManager.GetLogger(typeof(Program));
 System.Text.Encoding.RegisterProvider(
     System.Text.CodePagesEncodingProvider.Instance);
 GlobalContext.Properties["LogName"] = args[3];
-XmlConfigurator.Configure(new FileInfo("log4net.config"));
+var workingDir = AppDomain.CurrentDomain.BaseDirectory;
+XmlConfigurator.Configure(new FileInfo(Path.Combine(workingDir, "./log4net.config")));
 
 Synchronizator synchronizator = new(sourceDirectory, replicaDirectory);
 

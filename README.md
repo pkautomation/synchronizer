@@ -21,10 +21,11 @@ it is perfectly acceptable to use a third-party (or built-in) library.
 .NET 7 console app
 
 # Build 
-```synchronizer\Synchronizer> dotnet build Synchronizer```
+```dotnet build Synchronizer```
 
-# Run (example)
-```synchronizer\Synchronizer> dotnet run --project Synchronizer c:\\test\sourceFolder c:\\test\replicaFolder 10 c:\\test\logfile.log```
+# Run (Windows)
+```dotnet run --project Synchronizer c:\\test\sourceFolder c:\\test\replicaFolder 10 c:\\test\testlog.log```
+
 
 
 # Application logging
