@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Synchronizer": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Project",
+      "commandLineArgs": "c:\\test\\sourceFolder c:\\test\\replicaFolder 10 c:\\test\\mylog.log"
+    }
+  }
+}
