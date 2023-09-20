@@ -5,10 +5,10 @@ namespace Synchronizer;
 
 internal class Synchronizator
 {
-    private ILog log;
+    private readonly ILog log;
     private readonly string sourceDir;
     private readonly string replicaDir;
-    FileHelpers fileHelpers = new();
+    private readonly FileHelpers fileHelpers = new();
 
     public Synchronizator(string sourceDir, string replicaDir)
     {
@@ -65,7 +65,7 @@ internal class Synchronizator
             if (!sourceDirSubdirectories.Any(source => Path.GetFileName(source) == Path.GetFileName(replicaSubdirectory)))
             {
                 log.Info($"Deleting directory {replicaSubdirectory}");
-                fileHelpers.DeleteDirectory(replicaSubdirectory);
+                FileHelpers.DeleteDirectory(replicaSubdirectory);
             }
         }
 
@@ -82,7 +82,7 @@ internal class Synchronizator
             var replicaFileThatExistInBothDirectories = replicaDirFileNames.FirstOrDefault(replicaFile => Path.GetFileName(replicaFile) == Path.GetFileName(sourceFile));
             if (replicaFileThatExistInBothDirectories is not null)
             {
-                if (fileHelpers.GetMD5Checksum(replicaFileThatExistInBothDirectories) != fileHelpers.GetMD5Checksum(sourceFile))
+                if (FileHelpers.GetMD5Checksum(replicaFileThatExistInBothDirectories) != FileHelpers.GetMD5Checksum(sourceFile))
                 {
                     log.Info($"Replacing {replicaFileThatExistInBothDirectories} with {sourceFile}");
                     File.Copy(sourceFile, replicaFileThatExistInBothDirectories, true);

@@ -1,7 +1,7 @@
 ﻿namespace Synchronizer;
 internal class FileHelpers
 {
-   public string GetMD5Checksum(string filename)
+   public static string GetMD5Checksum(string filename)
     {
         using var md5 = System.Security.Cryptography.MD5.Create();
         using var stream = File.OpenRead(filename);
@@ -10,7 +10,7 @@ internal class FileHelpers
         return BitConverter.ToString(hash);
     }
 
-    public void DeleteDirectory(string path)
+    public static void DeleteDirectory(string path)
     {
         Directory.Delete(path, true);
     }

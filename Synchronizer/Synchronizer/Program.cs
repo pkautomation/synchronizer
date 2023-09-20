@@ -21,7 +21,7 @@ System.Text.Encoding.RegisterProvider(
 GlobalContext.Properties["LogName"] = args[3];
 XmlConfigurator.Configure(new FileInfo("log4net.config"));
 
-Synchronizator synchronizator = new Synchronizator(sourceDirectory, replicaDirectory);
+Synchronizator synchronizator = new(sourceDirectory, replicaDirectory);
 
 log.Debug($"Source directory set to:{sourceDirectory}");
 log.Debug($"Replica directory set to:{replicaDirectory}");
@@ -48,7 +48,6 @@ void OnTimedEvent(Object source, ElapsedEventArgs e)
         Environment.Exit(-1);
     }
 }
-
 
 void PrintUsageAndExit(string reasonMsg = "")
 {
