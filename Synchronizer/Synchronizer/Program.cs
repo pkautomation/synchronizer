@@ -2,7 +2,6 @@
 using log4net.Config;
 using Synchronizer;
 using System.Timers;
-using static System.Net.Mime.MediaTypeNames;
 
 uint synchronizationInterval;
 

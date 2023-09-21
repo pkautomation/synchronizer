@@ -5,7 +5,7 @@
     },
     "Profile 1": {
       "commandName": "Project",
-      "commandLineArgs": "c:\\test\\sourceFolder c:\\test\\replicaFolder 10 c:\\test\\mylog.log"
+      "commandLineArgs": "c:\\test\\sourceFolder2 c:\\test\\replicaFolder2 10 c:\\test\\mysuper.log"
     }
   }
 }

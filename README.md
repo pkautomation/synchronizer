@@ -44,4 +44,7 @@ To see only the logs requested within the task
 App was tested on Windows, but it has potential to work also on Linux.
 I have not checked the app behaviour if the user has no permission to perform action like: create directory, delete the file, create file. In case of issues that I did not handle the app should exit gracefully with exception being logged in a logger.
 
-Todo: unit tests, perhaps refactor to add strategy pattern here and there and using async methods where applicable (example: Synchronizator.ProcessFiles method)
+Todo: unit tests, perhaps refactor to add strategy pattern here and there and using async methods where 
+applicable (example: Synchronizator.ProcessFiles method),
+more validation can be added: make sure that the user do not pass source and replica dependent on each other (nested, same dirs) and the log is outside of both dirs
+

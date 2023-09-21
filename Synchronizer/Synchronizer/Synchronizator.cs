@@ -16,9 +16,6 @@ internal class Synchronizator
         this.replicaDir = replicaDir;
 
         log = LogManager.GetLogger(typeof(Synchronizator));
-        System.Text.Encoding.RegisterProvider(
-            System.Text.CodePagesEncodingProvider.Instance);
-        XmlConfigurator.Configure(new FileInfo("log4net.config"));
     }
 
     public void ProcessFolders()
