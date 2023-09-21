@@ -26,6 +26,8 @@ it is perfectly acceptable to use a third-party (or built-in) library.
 # Run (Windows)
 ```dotnet run --project Synchronizer c:\\test\sourceFolder c:\\test\replicaFolder 10 c:\\test\testlog.log```
 
+Where 10 is example interval in seconds how often the synchronization should happen
+
 
 
 # Application logging
